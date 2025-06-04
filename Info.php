@@ -5,21 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Info</title>
     <link rel="stylesheet" href="styles/Info.css" />
+    <link rel="stylesheet" href="styles/suche.css" />
     <link rel="icon" href="Bilder/Info_Logo.png" />
     <script src="scripts/sript.js"></script>
   </head>
 
   <body>
-    <nav>
-      <a href="index.html">Startseite</a>
-      <a href="Agentenübersicht.html">Agenten</a>
-      <a href="Info.html">Info</a>
-      <a href="SQLiteStudio-Datenbank.html">Datenbank</a>
+    <nav style="position: relative">
+      <a href="index.php">Startseite</a>
+      <a href="Agentenuebersicht.php">Agenten</a>
+      <a href="Info.php">Info</a>
+      <a href="SQLiteStudio-Datenbank.php">Datenbank</a>
+
       <div class="search-container">
-        <input id="searchInput" type="text" placeholder="Suchen..." />
+        <input
+          type="text"
+          id="agentSearch"
+          placeholder="Suchen..."
+          autocomplete="off"
+        />
         <button type="button" onclick="search()">Suchen</button>
       </div>
     </nav>
+
+    <div id="suggestions"></div>
 
     <section><h2>Quellen</h2></section>
 

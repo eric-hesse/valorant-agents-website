@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Startseite</title>
+    <link rel="stylesheet" href="styles/suche.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="icon" href="Bilder/Valorant_Logo.png" />
     <script src="scripts/sript.js"></script>
@@ -20,16 +21,24 @@
       ></video>
     </header>
 
-    <nav>
-      <a href="index.html">Startseite</a>
-      <a href="Agentenübersicht.html">Agenten</a>
-      <a href="Info.html">Info</a>
-      <a href="SQLiteStudio-Datenbank.html">Datenbank</a>
+    <nav style="position: relative">
+      <a href="index.php">Startseite</a>
+      <a href="Agentenuebersicht.php">Agenten</a>
+      <a href="Info.php">Info</a>
+      <a href="SQLiteStudio-Datenbank.php">Datenbank</a>
+
       <div class="search-container">
-        <input id="searchInput" type="text" placeholder="Suchen..." />
+        <input
+          type="text"
+          id="agentSearch"
+          placeholder="Suchen..."
+          autocomplete="off"
+        />
         <button type="button" onclick="search()">Suchen</button>
       </div>
     </nav>
+
+    <div id="suggestions"></div>
 
     <div style="padding: 20px">
       <section>
