@@ -1,38 +1,34 @@
-// Funktion zur Weiterleitung basierend auf Agentennamen
-function search() {
-  const query = document.getElementById("searchInput").value.trim();
-
-  if (!query) {
-    alert("Bitte gib einen Agentennamen ein.");
-    return;
-  }
-
-  // Formatierung: erster Buchstabe groß, Rest klein
-  const formattedName = query.charAt(0).toUpperCase() + query.slice(1).toLowerCase();
-
-  // Liste aller verfügbaren Agenten
-  const existingAgents = [
-    "Astra", "Breach", "Brimstone", "Chamber", "Clove", "Cypher", "Deadlock", "Fade",
-    "Gekko", "Harbor", "Iso", "Jett", "Kayo", "Killjoy", "Neon", "Omen", "Phoenix",
-    "Raze", "Reyna", "Sage", "Skye", "Sova", "Viper", "Yoru"
-  ];
-
-  if (existingAgents.includes(formattedName)) {
-    // Leitet zur Agenten-Seite weiter
-    window.location.href = `Agents/${formattedName}.html`;
-  } else {
-    alert(`Agent "${formattedName}" wurde nicht gefunden.`);
-  }
-}
-
-// Event Listener, damit Enter funktioniert – auf allen Seiten
 document.addEventListener("DOMContentLoaded", function () {
-  const input = document.getElementById("searchInput");
-  if (input) {
-    input.addEventListener("keydown", function (event) {
-      if (event.key === "Enter") {
-        search();
-      }
-    });
-  }
+  const input = document.getElementById("agentSearch");
+  const suggestions = document.getElementById("suggestions");
+
+  input.addEventListener("input", function () {
+    const query = this.value.trim();
+    if (query.length === 0) {
+      suggestions.innerHTML = "";
+      return;
+    }
+
+    fetch("../search_agents.php?query=" + encodeURIComponent(query))
+      .then((response) => response.json())
+      .then((data) => {
+        suggestions.innerHTML = "";
+        if (data.length === 0) {
+          suggestions.style.display = "none";
+          return;
+        }
+
+        suggestions.style.display = "block";
+
+        data.forEach((agent) => {
+          const div = document.createElement("div");
+          div.textContent = `${agent.name} (${agent.typ})`;
+          div.addEventListener("click", () => {
+            window.location.href = "../Agents/" + agent.name + ".php";
+          });
+
+          suggestions.appendChild(div);
+        });
+      });
+  });
 });
