@@ -1,0 +1,36 @@
+.search-container {
+  position: relative;
+  display: flex;
+  float: right;
+  margin: 7px;
+  z-index: 2000;
+}
+
+#suggestions {
+  position: absolute;
+  top: 42px; /* Abstand zur NavBar, je nach Höhe */
+  right: 8px; /* an gleiche Seite wie Suchfeld */
+  width: 250px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  z-index: 9999;
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: 14px;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+#suggestions div {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  color: #222;
+  background-color: #fff;
+  transition: background 0.2s ease;
+}
+
+#suggestions div:hover {
+  background-color: #f2f2f2;
+}
