@@ -22,10 +22,11 @@ nav a:hover {
   float: right;
   margin: 7px;
   display: flex;
+  position: relative;
 }
 
 .search-container:focus-within {
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.8); 
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
   transition: box-shadow 0.3s;
 }
 
@@ -38,7 +39,7 @@ input {
 
 button {
   padding: 8px 12px;
-  background-color: #B2525E;
+  background-color: #b2525e;
   color: #fff;
   border: none;
   border-radius: 0 5px 5px 0;
@@ -48,20 +49,21 @@ button {
 
 @media screen and (max-width: 600px) {
   .search-container {
-      float: none;
-      margin-top: 0;
-      text-align: center;
+    float: none;
+    margin-top: 0;
+    text-align: center;
   }
 
-  input, button {
-      display: block;
-      width: 100%;
-      margin-bottom: 10px;
+  input,
+  button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
 
 body {
-  background-color: #161A25;
+  background-color: #161a25;
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
@@ -70,7 +72,8 @@ body {
 
 .Agentenübersicht {
   border-radius: 18px;
-  border: solid #B2525E;
+  border: solid #b2525e;
+  position: relative;
 }
 
 map {
@@ -78,17 +81,15 @@ map {
 }
 
 p {
-  font-size:14pt;
+  font-size: 14pt;
 }
 
 li {
   padding-bottom: 5px;
   text-align: left;
-  font-size:10pt;
+  font-size: 10pt;
 }
 
 h2 {
   padding-top: 50px;
 }
-
-
