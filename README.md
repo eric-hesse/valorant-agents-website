@@ -30,4 +30,6 @@ The site was developed with **USBWebserver** (Apache + PHP + MySQL).
 
 The images and the background video (`Bilder/`) are not included: they are artwork from *Valorant* and belong to **Riot Games**. The pages therefore show empty picture frames in this repository.
 
+📩 **Want the full version with images and video?** I'm happy to send them on request – just [open an issue](../../issues/new) or message me on [LinkedIn](https://www.linkedin.com/in/hesse-eric).
+
 *Valorant and all related content are trademarks and © Riot Games, Inc. This is a non-commercial school project and is not endorsed by Riot Games.*
